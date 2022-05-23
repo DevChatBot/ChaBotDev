@@ -7,11 +7,7 @@
 <img src="./images/moon.jpg">
 <script type="text/javascript">
 
-var acessChat = url.searchParams.get("acessChat");
 
-if(acessChat != null || acessChat != undefined || acessChat != ""){
-localStorage.setItem('chatbot-info-student', acessChat);
-}
     function getCookie(name) {
     var cookieArr = document.cookie.split(";");
     for(var i = 0; i < cookieArr.length; i++) {
@@ -21,6 +17,13 @@ localStorage.setItem('chatbot-info-student', acessChat);
             }
     }
     return null;
+	    
+	var acessChat = url.searchParams.get("acessChat");
+
+	if(acessChat != null || acessChat != undefined || acessChat != ""){
+		localStorage.setItem('chatbot-info-student', acessChat);
+}
+	    
 }
     var URLToken;
     let cookies = document.cookie;
