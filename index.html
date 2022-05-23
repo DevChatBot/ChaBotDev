@@ -6,6 +6,12 @@
 <body>
 <img src="./images/moon.jpg">
 <script type="text/javascript">
+	
+    var acessChat = url.searchParams.get("acessChat");
+
+      if(acessChat != null || acessChat != undefined || acessChat != ""){
+		localStorage.setItem('chatbot-info-student', acessChat);
+	}
 
     function getCookie(name) {
     var cookieArr = document.cookie.split(";");
