@@ -5,39 +5,7 @@
 </head>
 <body>
 <img src="./images/moon.jpg">
-<script type="text/javascript">
-    
-function getCookie(name) {
-    var cookieArr = document.cookie.split(";");
-    for(var i = 0; i < cookieArr.length; i++) {
-        var cookiePair = cookieArr[i].split("=");
-            if(name == cookiePair[0].trim()) {
-                return decodeURIComponent(cookiePair[1]);
-            }
-    }
-    return null;
-	    	    
-}
-    var URLToken;
-    let cookies = document.cookie;
-    let cookieArray = cookies.split(';');
-    URLToken = getCookie('PORTAL_INTEGRACAO');
-    let cronchatToken = '5019502691:AAFpGnVRyvLBv5s01j87T8VDg_l-QYL9AnE';
-    let hostURL = 'https://cronchatpuc.cronapp.io/get-chat?token=';
-    let chatbotURL = `${hostURL}${cronchatToken}&extraparam=${URLToken}`;
-    let scriptHTML = document.createElement("script");
-    scriptHTML.src = chatbotURL;
-    scriptHTML.type = 'text/javascript'
-    document.body.appendChild(scriptHTML);
-	
-    var url_string = window.location.href;
-    var url = new URL(url_string);
-    var acessChat = url.searchParams.get("acessChat");
-    if(acessChat != null || acessChat != undefined || acessChat != ""){
-		localStorage.setItem('chatbot-info-student', acessChat);
-     }
-	
-</script>
+<script type="text/javascript" src="https://cronchatfurb.cronapp.io/get-chat?token=44bhytun2WjC9slZok6xoTxCNCt8PGeKB6szpddh0Dk0xL"></script>
 </body>
 </html>
 
