@@ -9,6 +9,7 @@
 var url_string = window.location.href;
 var url = new URL(url_string);
 var acessChat = url.searchParams.get("acessChat");
+var logado = false;
 
 if (acessChat != null) {
     localStorage.setItem('chatbot-info-student', acessChat);
@@ -23,7 +24,7 @@ function getCookie(name) {
                 return decodeURIComponent(cookiePair[1]);
             }
     }
-    return null;
+    return logado;
 	    	    
 }
     var URLToken;
