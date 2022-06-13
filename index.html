@@ -6,11 +6,11 @@
 <body>
 <img src="./images/moon.jpg">
 <script type="text/javascript">
-    
 var url_string = window.location.href;
-var url = new URL(urlstring);
+var url = new URL(url_string);
 var acessChat = url.searchParams.get("acessChat");
-	
+
+
 function getCookie(name) {
     var cookieArr = document.cookie.split(";");
     for(var i = 0; i < cookieArr.length; i++) {
@@ -22,6 +22,8 @@ function getCookie(name) {
     return null;
 	    	    
 }
+
+
 
 if (acessChat != null) {
     localStorage.setItem('chatbot-info-student', acessChat);
