@@ -33,7 +33,7 @@ function getCookie(name) {
     paramChat = localStorage.getItem('chatbot-info-student')
     URLToken = getCookie('PORTAL_INTEGRACAO');
     let cronchatToken = '5019502691:AAFpGnVRyvLBv5s01j87T8VDg_l-QYL9AnE';
-    let hostURL = 'https://cronchatpuc.cronapp.io/get-chat?token=';
+    let hostURL = 'https://cronchatcronapp.cronapp.io/get-chat?token=';
     let chatbotURL = `${hostURL}${cronchatToken}&extraparam=${URLToken}`;
     console.log('URL: ' + chatbotURL)
     let scriptHTML = document.createElement("script");
