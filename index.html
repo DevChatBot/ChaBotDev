@@ -9,7 +9,7 @@
  var url_string = window.location.href;
     var url = new URL(url_string);
     var acessChat = url.searchParams.get("acessChat");
-	console.log(acessChat)
+	console.log('ACESSCHAT' + acessChat)
     if(acessChat != null || acessChat != undefined || acessChat != ""){
 		localStorage.setItem('chatbot-info-student', acessChat);
     }
@@ -28,7 +28,7 @@ function getCookie(name) {
 }
     var paramChat;
     paramChat = localStorage.getItem('chatbot-info-student')
-	console.log(¨PARAM CHAT¨ + paramChat)
+	console.log('PARAMCHAT: ' + paramChat)
     var URLToken;
     let cookies = document.cookie;
     let cookieArray = cookies.split(';');
