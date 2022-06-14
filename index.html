@@ -39,8 +39,8 @@ function getCookie(name) {
     let cookies = document.cookie;
     let cookieArray = cookies.split(';');
     urlToken = getCookie('PORTAL_INTEGRACAO');
-    console.log('URL TOKEN: ' + URLToken);
-    paramChat = localStorage.getItem('chatbot-info-student' + '_' + URLToken);
+    console.log('URL TOKEN: ' + urlToken);
+    paramChat = localStorage.getItem('chatbot-info-student' + '_' + urlToken);
     console.log('PARAM CHAT: ' + paramChat);
     //unicodeEmail = paramChat.replace("@", "#");
     
