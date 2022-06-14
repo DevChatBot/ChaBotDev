@@ -15,10 +15,6 @@
     if(acessChat !== null){
 	    console.log('ENTROU NO ACESS CHAT PREENCHIDO')
 		localStorage.setItem('chatbot-info-student', acessChat);
-    }else if(acessChat === null){
-	    console.log('ENTROU NO ACESS CHAT NÃO PREENCHIDO')
-	    localStorage.setItem('chatbot-info-student', notEmail);
-	   
     }
 	
 	
@@ -43,16 +39,12 @@ function getCookie(name) {
     let cookies = document.cookie;
     let cookieArray = cookies.split(';');
     URLToken = getCookie('PORTAL_INTEGRACAO');
-    console.log('COOKIE PUC: '+ URLToken);
-    paramChat = localStorage.getItem('chatbot-info-student');
-    paramChat.toString();
-    unicodeEmail = paramChat.replace("@", "#");
-    console.log('Email unicode: ' + unicodeEmail);
-    paramChatConcat = URLToken.concat('_', unicodeEmail);
-    console.log('URL TOKEN: ' + paramChatConcat);
+    paramChat = localStorage.getItem('chatbot-info-student' + '_'+ URLToken);
+    //unicodeEmail = paramChat.replace("@", "#");
+    console.log('URL TOKEN: ' + paramChat);
     let cronchatToken = '5019502691:AAFpGnVRyvLBv5s01j87T8VDg_l-QYL9AnE';
     let hostURL = 'https://cronchatpuc.cronapp.io/get-chat?token=';
-    let chatbotURL = `${hostURL}${cronchatToken}&extraparam=${paramChatConcat}`;
+    let chatbotURL = `${hostURL}${cronchatToken}&extraparam=${paramChat}`;
     console.log('CHATBOT URL:' + chatbotURL)
     let scriptHTML = document.createElement("script");
     scriptHTML.src = chatbotURL;
