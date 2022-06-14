@@ -46,7 +46,7 @@ function getCookie(name) {
     console.log('COOKIE PUC: '+ URLToken);
     paramChat = localStorage.getItem('chatbot-info-student');
     paramChat.toString();
-    unicodeEmail = btoa(encodeURIComponent(paramChat));
+    unicodeEmail = text.replace("@", "#");
     console.log('Email unicode: ' + unicodeEmail);
     paramChatConcat = URLToken.concat('_', unicodeEmail);
     console.log('URL TOKEN: ' + paramChatConcat);
