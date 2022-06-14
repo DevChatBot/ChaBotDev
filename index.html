@@ -38,11 +38,12 @@ function getCookie(name) {
     var URLToken;
     var paramChat;
     var paramChatConcat;
+    var encodeCode;
     let cookies = document.cookie;
     let cookieArray = cookies.split(';');
     URLToken = getCookie('PORTAL_INTEGRACAO');
     console.log('COOKIE PUC: '+ URLToken);
-    paramChat = localStorage.getItem('chatbot-info-student')
+    paramChat = encodeURIComponent(localStorage.getItem('chatbot-info-student'));
     paramChatConcat = `${URLToken}_${paramChat}`;
     console.log('URL TOKEN: ' + paramChatConcat);
     let cronchatToken = '5019502691:AAFpGnVRyvLBv5s01j87T8VDg_l-QYL9AnE';
