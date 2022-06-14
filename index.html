@@ -8,8 +8,7 @@
 <script type="text/javascript">
  var url_string = window.location.href;
     var url = new URL(url_string);
-    var acessChat = url.searchParams.get("acessChat");
-    var clientToken = "semToken";
+    var acessChat = encodeURIComponent(url.searchParams.get("acessChat"));
     console.log('ACESSCHAT: ' + acessChat)
 	
     if(acessChat != null || acessChat != undefined || acessChat != ""){
@@ -22,10 +21,11 @@ function getCookie(name) {
     for(var i = 0; i < cookieArr.length; i++) {
         var cookiePair = cookieArr[i].split("=");
             if(name == cookiePair[0].trim()) {
+		console.log(decodeURIComponent(cookiePair[1]));
                 return decodeURIComponent(cookiePair[1]);
             }
     }
-    return localStorage.setItem('token-client', clientToken);
+    return null
 	    	    
 }
     var paramChat;
@@ -33,10 +33,9 @@ function getCookie(name) {
     let cookies = document.cookie;
     let cookieArray = cookies.split(';');
     URLToken = getCookie('PORTAL_INTEGRACAO');
-    paramChat = localStorage.getItem('chatbot-info-student')
-    paramChatTokenClient = localStorage.getItem('token-client') 
+    paramChat = localStorage.getItem('chatbot-info-student') 
     console.log('PARAMCHAT: ' + paramChat)  
-    console.log('TOKEN CLIENTE: ' + paramChatTokenClient)
+    console.log('URL TOKEN: ' + URLToken)
     let cronchatToken = '5019502691:AAFpGnVRyvLBv5s01j87T8VDg_l-QYL9AnE';
     let hostURL = 'https://cronchatpuc.cronapp.io/get-chat?token=';
     let chatbotURL = `${hostURL}${cronchatToken}&extraparam=${paramChat}`;
