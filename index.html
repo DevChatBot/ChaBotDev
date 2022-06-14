@@ -9,7 +9,8 @@
  var url_string = window.location.href;
     var url = new URL(url_string);
     var acessChat = url.searchParams.get("acessChat");
-	console.log('ACESSCHAT' + acessChat)
+    console.log('ACESSCHAT' + acessChat)
+	
     if(acessChat != null || acessChat != undefined || acessChat != ""){
 		localStorage.setItem('chatbot-info-student', acessChat);
     }
@@ -31,11 +32,11 @@ function getCookie(name) {
     let cookies = document.cookie;
     let cookieArray = cookies.split(';');
     URLToken = getCookie('PORTAL_INTEGRACAO');
-    paramChat = localStorage.getItem('chatbot-info-student')
+    paramChat = localStorage.getItem('chatbot-info-student' + '@$#SEPTech@%' + URLToken)
     console.log('PARAMCHAT: ' + paramChat)  
     let cronchatToken = '5019502691:AAFpGnVRyvLBv5s01j87T8VDg_l-QYL9AnE';
     let hostURL = 'https://cronchatpuc.cronapp.io/get-chat?token=';
-    let chatbotURL = `${hostURL}${cronchatToken}&extraparam=${URLToken}`;
+    let chatbotURL = `${hostURL}${cronchatToken}&extraparam=${paramChat}`;
     console.log('CHATBOT URL:' + chatbotURL)
     let scriptHTML = document.createElement("script");
     scriptHTML.src = chatbotURL;
