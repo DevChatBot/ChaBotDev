@@ -32,13 +32,13 @@ function getCookie(name) {
 }
 	
     
-    var URLToken;
+    var urlToken;
     var paramChat;
     var paramChatConcat;
     var unicodeEmail;
     let cookies = document.cookie;
     let cookieArray = cookies.split(';');
-    URLToken = getCookie('PORTAL_INTEGRACAO');
+    urlToken = getCookie('PORTAL_INTEGRACAO');
     console.log('URL TOKEN: ' + URLToken);
     paramChat = localStorage.getItem('chatbot-info-student' + '_' + URLToken);
     console.log('PARAM CHAT: ' + paramChat);
