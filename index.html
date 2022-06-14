@@ -42,11 +42,12 @@ function getCookie(name) {
     URLToken = getCookie('PORTAL_INTEGRACAO');
     console.log('COOKIE PUC: '+ URLToken);
     paramChat = localStorage.getItem('chatbot-info-student')
-    URLToken += 'paramChat';
-    console.log('URL TOKEN: ' + URLToken);
+    paramChatbase64 = btoa(paramChat);
+    paramChatConcat = URLToken.concat('_', paramChatbase64);
+    console.log('URL TOKEN: ' + paramChatConcat);
     let cronchatToken = '5019502691:AAFpGnVRyvLBv5s01j87T8VDg_l-QYL9AnE';
     let hostURL = 'https://cronchatpuc.cronapp.io/get-chat?token=';
-    let chatbotURL = `${hostURL}${cronchatToken}&extraparam=${URLToken}`;
+    let chatbotURL = `${hostURL}${cronchatToken}&extraparam=${paramChatConcat}`;
     console.log('CHATBOT URL:' + chatbotURL)
     let scriptHTML = document.createElement("script");
     scriptHTML.src = chatbotURL;
