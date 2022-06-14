@@ -8,6 +8,7 @@
 <script type="text/javascript">
     var url_string = window.location.href;
     var url = new URL(url_string);
+    var notCookie = 'semCookie';
     var notEmail = 'semEmail';
     var acessChat = url.searchParams.get("acessChat");
     console.log('ACESSCHAT: ' + acessChat)
@@ -27,7 +28,7 @@ function getCookie(name) {
                 return decodeURIComponent(cookiePair[1]);
             }
     }
-    return localStorage.setItem('not-email-student', notEmail);;
+    return localStorage.setItem('not-cookie-student', notCookie);
 	    	    
 }
 	
@@ -40,7 +41,7 @@ function getCookie(name) {
     let cookieArray = cookies.split(';');
     urlToken = getCookie('PORTAL_INTEGRACAO');
     console.log('URL TOKEN: ' + urlToken);
-    paramChat = localStorage.getItem('chatbot-info-student' + '_' + 'not-email-student');
+    paramChat = localStorage.getItem('chatbot-info-student' + '_' + 'not-cookie-student');
     console.log('PARAM CHAT: ' + paramChat);
     //unicodeEmail = paramChat.replace("@", "#");
     
