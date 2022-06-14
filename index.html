@@ -8,15 +8,15 @@
 <script type="text/javascript">
     var url_string = window.location.href;
     var url = new URL(url_string);
-    var pucCookie = "semCookie";
     var notEmail = "semEmail";
     var acessChat = url.searchParams.get("acessChat");
     console.log('ACESSCHAT: ' + acessChat)
 	
     if(acessChat != null || acessChat != undefined || acessChat != ""){
+	    console.log('ENTROU NO ACESS CHAT PREENCHIDO')
 		localStorage.setItem('chatbot-info-student', acessChat);
     }else{
-	    
+	    console.log('ENTROU NO ACESS CHAT NÃO PREENCHIDO')
 	   localStorage.setItem('chatbot-info-student', notEmail); 
     }
 	
@@ -29,7 +29,7 @@ function getCookie(name) {
                 return decodeURIComponent(cookiePair[1]);
             }
     }
-    return pucCookie;
+    return 'semCookie';
 	    	    
 }
 	
