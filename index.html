@@ -12,10 +12,10 @@
     var acessChat = url.searchParams.get("acessChat");
     console.log('ACESSCHAT: ' + acessChat)
 	
-    if(acessChat != null || acessChat != undefined || acessChat != ""){
+    if(acessChat !== null){
 	    console.log('ENTROU NO ACESS CHAT PREENCHIDO')
 		localStorage.setItem('chatbot-info-student', acessChat);
-    }else if(acessChat === null || acessChat === undefined || acessChat === ""){
+    }else if(acessChat === null){
 	    console.log('ENTROU NO ACESS CHAT NÃO PREENCHIDO')
 	    localStorage.setItem('chatbot-info-student', notEmail);
 	   
