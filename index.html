@@ -17,7 +17,10 @@
 		localStorage.setItem('chatbot-info-student', acessChat);
     }else if(acessChat === null || acessChat === undefined || acessChat === ""){
 	    console.log('ENTROU NO ACESS CHAT NÃO PREENCHIDO')
-	   localStorage.setItem('chatbot-info-student', notEmail); 
+	    localStorage.setItem('chatbot-info-student', notEmail);
+	    var teste = localStorage.getItem('chatbot-info-student', notEmail);
+	    console.log('teste' + teste);
+	   
     }
 	
 
