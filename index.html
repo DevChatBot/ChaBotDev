@@ -9,7 +9,7 @@
  var url_string = window.location.href;
     var url = new URL(url_string);
     var acessChat = url.searchParams.get("acessChat");
-    var token = "semToken";
+    var clientToken = "semToken";
     console.log('ACESSCHAT: ' + acessChat)
 	
     if(acessChat != null || acessChat != undefined || acessChat != ""){
@@ -25,7 +25,7 @@ function getCookie(name) {
                 return decodeURIComponent(cookiePair[1]);
             }
     }
-    return localStorage.setItem('token-client', token);
+    return localStorage.setItem('token-client', clientToken);
 	    	    
 }
     var paramChat;
