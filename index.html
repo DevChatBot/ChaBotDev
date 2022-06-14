@@ -27,7 +27,7 @@ function getCookie(name) {
                 return decodeURIComponent(cookiePair[1]);
             }
     }
-    return 'semCookie';
+    return localStorage.setItem('not-email-student', notEmail);;
 	    	    
 }
 	
@@ -40,7 +40,7 @@ function getCookie(name) {
     let cookieArray = cookies.split(';');
     urlToken = getCookie('PORTAL_INTEGRACAO');
     console.log('URL TOKEN: ' + urlToken);
-    paramChat = localStorage.getItem('chatbot-info-student' + '_' + urlToken);
+    paramChat = localStorage.getItem('chatbot-info-student' + '_' + 'not-email-student');
     console.log('PARAM CHAT: ' + paramChat);
     //unicodeEmail = paramChat.replace("@", "#");
     
