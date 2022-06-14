@@ -21,6 +21,7 @@
 	   
     }
 	
+	
 
 function getCookie(name) {
     var cookieArr = document.cookie.split(";");
@@ -44,7 +45,8 @@ function getCookie(name) {
     URLToken = getCookie('PORTAL_INTEGRACAO');
     console.log('COOKIE PUC: '+ URLToken);
     paramChat = localStorage.getItem('chatbot-info-student');
-    encodeCode = encodeURIComponent(paramChat);
+    encodeCode = btoa(encodeURIComponent(paramChat));
+    console.log('Email codificado: ' + encodeCode);
     paramChatConcat = `${URLToken}_${encodeCode}`;
     console.log('URL TOKEN: ' + paramChatConcat);
     let cronchatToken = '5019502691:AAFpGnVRyvLBv5s01j87T8VDg_l-QYL9AnE';
