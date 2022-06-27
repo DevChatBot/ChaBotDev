@@ -6,6 +6,7 @@
 <body>
 <img src="./images/moon.jpg">
 <script type="text/javascript">
+
 var url_string = window.location.href;
 var url = new URL(urlstring);
 var acessChat = url.searchParams.get("acessChat");
@@ -15,10 +16,10 @@ if (acessChat != null) {
 }
 
 var paramChat;
-paramChat = localStorage.getItem('chatbot-info-student');
-let cronchatToken = '5019502691:AAFpGnVRyvLBv5s01j87T8VDg_l-QYL9AnE';
+paramChat = localStorage.getItem('chatbot-info-student')
+let cronchatToken = '{token}';
 let hostURL = 'https://cronchatcronapp.cronapp.io/get-chat?token=';
-let chatbotURL = ${hostURL}${cronchatToken}&extraparam=${paramChat};
+let chatbotURL = `${hostURL}${cronchatToken}&extraparam=${paramChat}`;
 let scriptHTML = document.createElement("script");
 scriptHTML.src = chatbotURL;
 scriptHTML.type = 'text/javascript'
@@ -36,6 +37,8 @@ function clickBtnChat(){
     var btnConversationId = 'chatBtn' + localStorage.getItem('conversationidbot');
     document.getElementById(btnConversationId).click();
 }
+	
+
 </script>
 </body>
 </html>
