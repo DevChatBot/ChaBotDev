@@ -56,8 +56,9 @@ function getCookie(name) {
     console.log("Cookie Arr" + cookieArr);
     for (var i = 0; i < cookieArr.length; i++) {
         var cookiePair = cookieArr[i].split("=");
+        consolo.log("cookiepair antes do if: " + cookiePair)
         if (name == cookiePair[0].trim()) {
-            console.log(decodeURIComponent("cookiePair: " + cookiePair[1]));
+            console.log(decodeURIComponent(cookiePair[1]));
             return decodeURIComponent(cookiePair[1]);
         }
     }
